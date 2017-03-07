@@ -37,7 +37,7 @@ card	 */
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
                 this.rank =cardRank;
                 this.suit = cardSuit;
-                this.pointValue= cardPointValue;cardPointValue;
+                this.pointValue= cardPointValue;
 	}
 
 
