@@ -47,6 +47,7 @@ card	 */
 	 */
 	public String suit() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+                return suit;
    }
 
 	/**
@@ -55,7 +56,8 @@ card	 */
 	 */
 	public String rank() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-	}
+                return rank;
+        }
 
    /**
 	 * Accesses this <code>Card's</code> point value.
@@ -63,7 +65,8 @@ card	 */
 	 */
 	public int pointValue() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-	}
+                return pointValue;
+        }
 
 	/** Compare this card with the argument.
 	 * @param otherCard the other card to compare to this
@@ -73,7 +76,13 @@ card	 */
 	 */
 	public boolean matches(Card otherCard) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
-	}
+                if (rank.equals(otherCard.rank) && pointValue==otherCard.pointValue && suit.equals(otherCard.suit)){
+                       return true;
+                }
+                else
+                    return false;
+               
+        }
 
 	/**
 	 * Converts the rank, suit, and point value into a string in the format
@@ -88,5 +97,6 @@ card	 */
 	@Override
 	public String toString() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 1 *** */
+            return ("This card is a " + rank + " of " + suit + " and is worth " + pointValue + " points");
 	}
 }
