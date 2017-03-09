@@ -1,3 +1,8 @@
+package Activity02;
+
+
+
+
 import java.util.List;
 import java.util.ArrayList;
 
@@ -18,7 +23,7 @@ public class Deck {
 	 * Cards are dealt from the top (highest index) down.
 	 * The next card to be dealt is at size - 1.
 	 */
-	private int size;
+	private int size=0;
 
 
 	/**
@@ -31,6 +36,14 @@ public class Deck {
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+                cards = new ArrayList<Card>();
+                
+                for (int i = 0; i < ranks.length; i++){
+                    Card card = new Card(ranks[i], suits[i], values[i]);
+                    cards.add(card);
+                    size++;
+                }
+                
 	}
 
 
@@ -40,6 +53,12 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+                if (size==0){
+                    return true;
+                }
+                else{
+                    return false;
+                }
 	}
 
 	/**
@@ -48,6 +67,7 @@ public class Deck {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+                return size;
 	}
 
 	/**
@@ -65,6 +85,14 @@ public class Deck {
 	 */
 	public Card deal() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+                if (size == 0){
+                    return null;
+                }
+                else{
+                    size--;
+                    return cards.get(size);
+                    
+                }
 	}
 
 	/**
