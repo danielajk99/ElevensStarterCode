@@ -1,3 +1,7 @@
+package Activity03;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 /**
  * This class provides a convenient way to test shuffling methods.
  */
@@ -26,7 +30,7 @@ public class Shuffler {
 			}
 			System.out.println();
 		}
-		System.out.println();
+		/*System.out.println();
 
 		System.out.println("Results of " + SHUFFLE_COUNT +
 								 " consecutive efficient selection shuffles:");
@@ -40,6 +44,7 @@ public class Shuffler {
 			System.out.println();
 		}
 		System.out.println();
+                */
 	}
 
 
@@ -51,7 +56,29 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-	}
+               int pos = values.length/2;
+               int[] vala = new int[pos];
+               for (int i = 0; i < pos; i++){
+                   vala[i] = values[i];
+               }
+               int[] valb = new int[pos];
+               for (int i = 0; i < pos; i++){
+                   valb[i] = values[pos + i];
+               }
+               int[] shuffled = new int[values.length];
+               for (int i = 0; i < pos; i++){
+                   int place = i*2;
+                   shuffled[place] = vala[i];
+                   shuffled[place + 1] = valb[i];
+               }
+               //values = shuffled;
+               for(int i = 0; i < values.length; i++) {
+                   values[i] = shuffled[i];
+               }
+               
+               
+        }
+               /*}*/
 
 	/**
 	 * Apply an "efficient selection shuffle" to the argument.
@@ -66,5 +93,11 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+            int[] shuff = new int[values.length];
+            for (int i = 0; i < values.length; i++){
+                int rnd = new Random().nextInt(values.length);
+                shuff[i] = values[rnd];
 	}
+        }
 }
+            
